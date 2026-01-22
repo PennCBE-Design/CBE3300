@@ -232,68 +232,25 @@ Pin 4: Free pin!
 
 We only need one output pin for PWM inputs to the pump.
 
-### Filter assembly
+### Enclosure construction
 
-1. Procure a media housing:
-    - a plastic cup with the bottom cut away OR 
-    - a 3D printed vessel with two open ends
-1. Apply hot glue to the base of the media housing.
-1. Place the fine mesh over the hot glue to secure it to the media housing.
-1. Trim the edges after the glue cools.
-1. Fill the media housing with activated carbon or other filtration media.
-1. Repeat mesh attachment on the top of the media housing.
-1. Ensure that the media housing can fit over the water reservoir and hold circulating liquid above. If not, design a fixture for the media housing.
+[Under construction]
 
 ### Flow cell
 
-1. Slice and print the 3D files for the flow cell. No special settings are necessary.
-    - Ensure the parts are oriented appropriately for printing (avoid unsupported areas, etc).
-1. Cut two clear lenses from a plastic cup or sheet stock.
-1. Insert one lens into one flow cell viewport recess. Ensure that the lens is flush with the flat surface.
-1. Apply hot glue to the interior edge of the recess.
-1. Insert the viewport plug into the recess and hold until cool.
-1. Repeat for the opposite viewport.
-1. Confirm the system seal by plugging the base with hot glue or electrical tape and filling the volume with liquid.
-1. Allow the system to sit for 1-5 minutes. Note the location of any leaks.
-    - If leaks occur, remove the affected plugs. Repeat the process as needed until the system is leak-tight.
+[Under construction]
 
 ### Circulation Assembly
 
-1. Slice and print the 3D files for the case. No special settings are necessary.
-    - Ensure the parts are oriented appropriately for printing (avoid unsupported areas, etc).
-1. Attach the Arduino to the bottom case shell and secure with pins.
-    - It may be necessary to use pliers to insert the pins.
-    - It may be necessary to increase or reduce the pin diameter with tape, sanding, or other means.
-1. Fit the pump to the front plate and secure with screws and nuts.
-1. Fit the prototyping board to the front plate and secure with glue, screws, wire loops, or pins.
-1. Fit the back plate and secure the potentiometer bases, passing the knobs through the plate.
-1. Fit and fix the barrel jack adapter to the back plate. Connect the 12 V power leads to the prototyping board.
-1. Attach the top of the case to the unit.
-1. Connect the flow cell to the pump using large diameter silicone tubing.
-1. Fit the flow cell mounting brackets and situate the flow cell, photosensor, and LED. Secure the outer bracket component.
-
-![Image of final assembly step 1 for flow cell.](img/PXL_20240715_234513860.jpg){width=50%}
+[Under construction]
 
 ## Firmware
 
-1. Open `project-water-purifier/program/program.ino` in your editor.
-1. If alternative program values are required, set the `readVals();` parameters in `loop()` at the bottom of the program.
-    - Default number of readings before check: `int n = 10`
-    - Default number of milliseconds to wait between each reading: `int d = 1000`
-    - To set to 1 reading with 0.1 second delay: `readVals(1, 100);`
-1. Connect the Arduino to the computer and identify its serial port.
-1. Upload `project-water-purifier/program/program.ino` to the Arduino.
+[Stay tuned]
 
 ## Operation
 
-1. Prepare a test solution reservoir using approximately 50 \textmu L (1 drop) of red food dye in 30 mL of water.
-1. Situate the filter assembly over the reservoir.
-1. Secure the circulation assembly near the reservoir and route tubing to the flow cell inlet and from the pump outlet such that all liquid recirculates in the reservoir.
-1. Power on the device.
-1. The diaphragm or peristaltic pumps do not need priming. The device will run for a period of time, sample, and check whether to continue operating.
-1. If necessary, adjust the pump speed or concentration threshold using the respective potentiometer.
-1. At any point, the device will output the flow cell reading for observation.
-1. Once the flow cell value reaches the threshold, pump operation will cease.
+[TBD]
 
 # Output
 
@@ -327,21 +284,6 @@ Example:
 
 - https://www.reddit.com/r/arduino/comments/17p0wsl/arduino_uno_slows_down_and_stops_working_after/
 
-## The pump is moving water the wrong way.
-
-If the motor is going the wrong direction with a peristaltic pump, reverse the polarity of the leads. With a diaphram pump, the device flows water only in one direction.
-
-## Water is coming out of the flow cell sides.
-
-If the viewports on the flow cell are leaking, remove the element altogether, and reapply. It may be easier to first secure the lens, then attach the plug -- possibly by applying glue to the plug before seating, rather than applying more glue to the recess.
-
-## There are bubbles in the water coming out of the pump.
-
-This may be due to leaks in the flow cell. Small air gaps may be okay. Everything leaks under the right conditions. As long as it does not interfere with measurement, a small leak that allows air into the flow cell during operation (but not water out) is acceptable for short-term operation.
-
-## The analyte is not being filtered from the water.
-
-There may be difficulty matching adsorbent to analyte and timescale of removal. For example, using natural substances such as spices with commercial filters and a small number of passes produced limited results. Changing to exclusively activated carbon and chemical indicator (food dye) resolved the color detection issue. However, carbon sediment mixed with the water in the process of filtration. The activated carbon should be rinsed before use, and mechanical filtration by nonwoven materials or porous media may be necessary for complete removal of suspended solids. Note that activated carbon may react with content in regular tap water to _produce_ precipitate. For this reason, the demonstration of activated carbon filtering dye is best performed with DI or distilled water.
 
 # Alternative embodiments and extensions
 
@@ -353,44 +295,13 @@ An initial photosensor circuit was constructed using the same principle as the a
 
 ![Breadboard photosensor prototype](img/PXL_20240610_121450147.jpg){width=50%}
 
-### Alginate bead synthesis
-
-Alginate bead synthesis was performed in a variety of permutations. It was ultimately deemed too fragile to proceed in the given timeframe.
-
-![](img/PXL_20240617_180910802.jpg){width=25%}
-
-![](img/PXL_20240617_183019151.jpg){width=25%}
-
-![](img/PXL_20240617_183025425.jpg){width=25%}
-
-![](img/PXL_20240617_183507212.jpg){width=25%}
-
-![](img/PXL_20240617_183510112.jpg){width=25%}
-
-![](img/PXL_20240617_183759525.jpg){width=25%}
-
-![](img/PXL_20240617_184203431.jpg){width=25%}
-
-### Conductivity and Total Dissolved Solids (TDS)
-
-![Prototype using TDS probe](img/PXL_20240617_153021265.jpg){width=50%}
-
-![Prototype using TDS probe. Image 2.](img/PXL_20240617_153056036.jpg){width=50%}
 
 # References
 
 ## Background and educational
 
-1. https://www.ce.washington.edu/news/article/2023-02-01/research-splash-color
-    - case study colored dye estuary water
-1. https://pubs.acs.org/doi/pdf/10.1021/es60058a005
-    - waste/water filtration concepts (legacy publication)
-1. Detecting contaminants - state-of-the-art
-    - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7126548/
-1. https://www.jpl.nasa.gov/edu/learn/project/make-a-water-filter/
-1. https://edu.rsc.org/experiments/carbon-filtration-and-activated-charcoal/412.article
-1. https://www.sciencebuddies.org/science-fair-projects/project-ideas/Chem_p108/chemistry/which-filtration-material-leads-to-the-best-drinking-water
-
+1. From a plant physiology perspective: https://www.appstate.edu/~neufeldhs/pltphys/waterpotential.htm
+2. Humidity standardization and proper metrology: https://www.teos-10.org/pubs/ICPWS2013_WS_TechnicalReport_Humidity_20150211primo.pdf
 
 ## Datasheets
 
@@ -425,72 +336,9 @@ Alginate bead synthesis was performed in a variety of permutations. It was ultim
 
 ## Project-specific
 
-### Activated carbon effectiveness
-
-1. https://www.freshwatersystems.com/blogs/blog/activated-carbon-filters-101
-1. https://www.youtube.com/watch?v=wdfZ9r8p7A0
-    - activated carbon remove titration indicator
-1. https://www.youtube.com/watch?v=ryu7fH-mxTk
-    - activated carbon remove grape juice color
-1. https://www.youtube.com/watch?v=L6ZWkO6tPTE
-    - removing color from oil
-1. https://www.reddit.com/r/askscience/comments/4sk8sb/practical_filtration_method_to_remove_lead_from/
-    - activated carbon filtering lead
-1. https://www.youtube.com/watch?v=Vqj4VAeR0bc
-    - activated carbon static color removal
-1. https://www.youtube.com/watch?v=son8yyD-T_E
-    - Verify activated carbon vs charcoal -- activated carbon shows bubbles
-
-
 ### DIY photosensor capability
 
 1. https://www.che.utah.edu/teaching_module/spectrophotometer/
-
-
-### Cuvette flow cell
-
-1. https://www.biocompare.com/Bench-Tips/175408-Selecting-the-Right-Volume-to-Measure-Your-Samples/#:~:text=Cuvettes,will%20work%20in%20most%20spectrophotometers.
-    - sizing cuvette
-1. https://www.agilent.com/cs/library/technicaloverviews/public/te-cary-3500-uv-vis-variable-path-length-cell-holder-5994-5781en-agilent.pdf
-    - cuvette design
-1. https://icuvets.com/en/understanding-cuvette-volume-material-path-length-etc/
-    - cuvette design
-
-
-### Dyes
-
-1. https://pubs.acs.org/doi/10.1021/ie9012437
-    - methylene blue dye uv degradation (LEDs)
-1. https://www.researchgate.net/figure/Organic-dyes-that-are-used-for-degradation-under-UV-light_fig10_314108580
-    - Organic dyes (UV degradable)
-1. https://pubs.rsc.org/en/content/articlehtml/2022/ra/d2ra05779d
-    - Investigating degradation without photocatalysts
-1. https://www.nutraceuticalsworld.com/issues/2017-03/view_breaking-news/basf-launches-10-beta-carotene-colorant/
-    - natural orange coloring
-
-## Open-source projects and other embodiments
-
-1. https://hackaday.com/2023/03/20/remote-water-quality-monitoring/
-    - https://www.instructables.com/Arduino-Water-Quality-Monitoring-System/
-    - https://www.instructables.com/member/RowlesGroupResearch/
-    - https://www.rowlesresearch.com/work/research
-1. https://hackaday.com/2015/08/27/hackaday-prize-semifinalist-water-quality-monitoring/
-1. https://hackaday.io/project/6835-c4derpillar-open-ce-cd
-1. https://hackaday.com/2014/10/17/open-source-water-quality-tester/
-    - https://www.academia.edu/8319858/Open-source_mobile_water_quality_testing_platform
-    - https://hal.science/hal-02119690/document
-1. https://www.pottersforpeace.org/ceramic-water-filter-project
-1. https://makezine.com/article/education/open-sourcing-plans-low-tech-high-thinking-water-filters/
-1. https://unfold.be/pages/open-source-waterfilter.html
-1. https://faq.hydroviv.com/en-US
-1. https://jerrycanfilter.com/opensource/
-1. https://www.youtube.com/watch?v=3uzXeCnzf0c
-    - diy water filter (sediment, etc)
-1. https://www.youtube.com/watch?v=y0OsnJ0Uz5Q
-    - biosand filter
-1. https://news.mit.edu/2021/filters-sapwood-purify-water-0325
-    - bio wood filter
-    - http://www.xylemwaterfilter.org/science-projects/
 
 
 ## Commercial products
@@ -507,42 +355,13 @@ Atlas Scientific on Digikey:
 https://www.digikey.com/en/products/filter/sensor-kits/662?_gl=1%2At52e2s%2A_up%2AMQ..&gclid=CjwKCAjwg8qzBhAoEiwAWagLrHohlK2_Z5QmxKYwpSW47ihrBR-TklAMvOUN4U5xaPaEU2wLhoMzdRoC8WEQAvD_BwE&s=N4IgjCBcoLQBxVAYygMwIYBsDOBTANCAPZQDaIALGAKwBMIh1ADGAGwgC6Avj0A
 
 
-### Level sensing
+### Water level sensing (if doing auto-irrigation)
 
 1. https://www.dfrobot.com/product-1863.html
     - Industrial sensor, 4-20 mA output 
 
-### Oxidation-reduction potential (ORP) and chlorine content
-
-1. https://forum.arduino.cc/t/chlorine/52113/5
-    - Arduino forum discussion on measuring chlorine content
-1. https://basinpooldesigns.com/wp-content/uploads/2018/10/Chlorine-PPM-to-ORP-conversion-chart.pdf
-    - Relating ORP to chlorine content
-1. https://atlas-scientific.com/blog/orp-measurement-for-chlorine/
-    - oxidation-reduction potential (ORP) sensor
-1. https://www.homedepot.com/p/Waterproof-Bluetooth-Pool-ORP-and-Temperature-Tester-ORP650B/305750913
-    - commercial orp sensor
-- https://www.dfrobot.com/product-1071.html
-    - analog Arduino-compatible sensor
-1. https://www.us.endress.com/en/field-instruments-overview/liquid-analysis-product-overview/free-chlorine-digital-sensor-ccs51d?t.tabId=product-overview
-1. https://sbcontrol.com/probes-selection/ppm-sensors/
-    - Commercial chlorine sensor
-1. https://sea.omega.com/ph/pptst/CLDTX_FCLTX.html
-    - Chlorine, 4-20 mA output
-1. https://sensorex.com/product/fcl-amperometric-free-chlorine-sensor/
-    - amperometric, 4-20 mA output, free chlorine sensor
-1. https://wiki.seeedstudio.com/Grove-ORP-Sensor-kit/
-1. https://www.vernier.com/product/orp-sensor/?wcpbc-manual-country=US
-
-
-### pH
+### pH monitoring
 
 1. https://atlas-scientific.com/ph
 1. https://atlas-scientific.com/embedded-solutions/surveryor-analog-ph-sensor-meter/
 1. https://www.dfrobot.com/product-1025.html
-
-
-### Conductivity
-
-1. https://atlas-scientific.com/embedded-solutions/ezo-conductivity-circuit/
-1. https://atlas-scientific.com/kits/conductivity-k-1-0-kit/
